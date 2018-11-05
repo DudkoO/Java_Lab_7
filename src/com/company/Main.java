@@ -1,49 +1,37 @@
 package com.company;
 
+import java.util.ArrayList;
+
+
 public class Main {
 
     public static void main(String[] args) {
-        Auto auto = new Auto();
-        System.out.println("RegistrationNumberOfTheCar test");
-        System.out.println(auto.getRegistrationNumberOfTheCar());
-        String number="AA1234BC";
-        auto.setRegistrationNumberOfTheCar(number);
-        System.out.println(auto.getRegistrationNumberOfTheCar());
 
-        System.out.println("Brand test");
-        System.out.println(auto.getBrand());
-        auto.setBrand("Merzedes");
-        String brand = "BMW";
-        auto.setBrand(brand);
-        System.out.println(auto.getBrand());
+        Auto auto1=new Auto("AA1234BA","BMW",1999,"RED",
+                "Dudko Oleg Sergeevich","Ukraine,Odessa,65000,Shevchenko,1,123",
+                "Sedan");
+        Auto auto2=new Auto("AA4444BA","BMW",2015,"RED",
+                "Malakeev Vladislav Komenternovich","Ukraine,Odessa,65000,Shevchenko,1,25",
+                "Minivan");
+        ArrayList<Auto> AutoBase= new ArrayList<Auto>();
 
-        System.out.println("YearOfRelease test");
-        System.out.println(auto.getYearOfRelease());
-        auto.setYearOfRelease(1999);
-        System.out.println(auto.getYearOfRelease());
+        AutoBase.add(auto1);
+        AutoBase.add(auto2);
 
 
-        System.out.println("color test");
-        System.out.println(auto.getColor());
-        auto.setColor("RED");
-        System.out.println(auto.getColor());
-
-        System.out.println("nameOfTheOwner test");
-        System.out.println(auto.getNameOfTheOwner());
-        auto.setNameOfTheOwner("Dudko Oleg Sergeevich");
-        System.out.println(auto.getNameOfTheOwner());
-
-
-        System.out.println("residenceAddressOfTheOwner test");
-        System.out.println(auto.getResidenceAddressOfTheOwner());
-        auto.setResidenceAddressOfTheOwner("Ukraine,Odessa,65000,Shevchenko,1,28");
-        System.out.println(auto.getResidenceAddressOfTheOwner());
+        Task_Lab_8 lab8=new Task_Lab_8(auto1);//создаем , используя конструктор
+        lab8.addAuto(auto2); //добавляем запись
+        lab8.prinrAutoAll();//выводим всю базу
+        lab8.SearchAuto("234");//ищем по части номера
+        lab8.SearchAoto("BMW","RED");//ведём поиск на марке и цвету
+        lab8.addToTop(auto2);//добавляем в начало
+        System.out.println("________________________________");
+        lab8.prinrAutoAll();
+        System.out.println("__deleted__");
+        lab8.deleteAuto("AA4444BA");
+        lab8.prinrAutoAll();//выводим всю базу
 
 
-        System.out.println("carType test");
-        System.out.println(auto.getCarType());
-        auto.setCarType("Sedan");
-        System.out.println(auto.getCarType());
 
     }
 }

@@ -2,6 +2,8 @@ package com.company;
 import java.util.Date;
 import java.util.regex.*;
 
+
+
 public class Auto {
     String registrationNumberOfTheCar;
     String brand;
@@ -10,6 +12,21 @@ public class Auto {
     String nameOfTheOwner;
     String residenceAddressOfTheOwner;
     String carType;
+
+    public Auto(String registrationNumberOfTheCar,String brand,int yearOfRelease,
+            String color,String nameOfTheOwner,String residenceAddressOfTheOwner,
+            String carType)
+    {
+      this.setRegistrationNumberOfTheCar(registrationNumberOfTheCar);
+      this.setBrand(brand);
+      this.setYearOfRelease(yearOfRelease);
+      this.setColor(color);
+      this.setNameOfTheOwner(nameOfTheOwner);
+      this.setResidenceAddressOfTheOwner(residenceAddressOfTheOwner);
+      this.setCarType(carType);
+
+    }
+    public Auto(){}
 
     void setRegistrationNumberOfTheCar(String newRegistrationNumberOfTheCar){
         Pattern registrationNumberOfTheCarFormat = Pattern.compile("\\D{2}\\d{4}\\D{2}");
