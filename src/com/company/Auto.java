@@ -1,10 +1,11 @@
 package com.company;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.regex.*;
 
 
 
-public class Auto {
+public class Auto implements Serializable {
     String registrationNumberOfTheCar;
     String brand;
     int yearOfRelease;

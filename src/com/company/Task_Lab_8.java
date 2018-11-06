@@ -6,14 +6,29 @@ import java.util.concurrent.TimeUnit;
 public class Task_Lab_8 {
    ArrayList<Auto> AutoBase = new ArrayList<Auto>();
 
+
    public Task_Lab_8(Auto auto){//конструктор
        this.AutoBase.add(auto);
    }
 
-   public void addAuto(Auto auto){
-       this.AutoBase.add(auto);
+   public Task_Lab_8(ArrayList<Auto> a){
+       this.AutoBase=a;
    }
+   public Task_Lab_8(){}
 
+    public void addAuto(Auto auto){
+        this.AutoBase.add(auto);
+    }
+
+    public void ToFile(){
+        Task_Lab_9 lab9 = new Task_Lab_9();
+        lab9.ToBinFileAll(this.AutoBase);
+    }
+    public void FromFile(){
+        Task_Lab_9 lab9 = new Task_Lab_9();
+        this.AutoBase=lab9.FromBinFileAll();
+
+    }
     public void prinrAutoAll(){
     for (int i = 0; i <this.AutoBase.size() ; i++) {
         printAutoData(this.AutoBase.get(i));
